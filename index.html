@@ -2,33 +2,25 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>YOU ARE AN IDIOT!</title>
-    <style>
-        body { background-color: white; text-align: center; font-family: sans-serif; overflow: hidden; }
-        .neon-text { color: black; font-size: 50px; font-weight: bold; margin-top: 20vh; }
-        img { width: 300px; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANS IS WATCHING YOU!</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="neon-text">YOU ARE AN IDIOT! 💀</div>
-    <p>Hahaha! Eskileri hatırladın mı?</p>
-    
-    <button onclick="startChaos()" style="padding: 15px; background: #000; color: #fff; border: none; cursor: pointer;">BAŞLAT</button>
 
-    <script>
-        function startChaos() {
-            // Nostaljik ses dosyasını bir URL'den çekebilirsin
-            let audio = new Audio('https://www.soundboard.com/handler/DownLoadTrack.ashx?cliptoken=... '); // Örnek ses
-            audio.loop = true;
-            audio.play();
+    <div id="content">
+        <h1 class="glitch">YOU ARE AN IDIOT!</h1>
+        <img id="sans-img" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJpZzRreXZid2R4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9iZ2VudGlmaWVyJmN0PWc/UCWmgOshU7f7Z/giphy.gif">
+        
+        <button onclick="badTime()" id="start-btn">
+            DO YOU WANT TO HAVE A BAD TIME?
+        </button>
+    </div>
 
-            // Ekranı sallama veya renk değiştirme efekti
-            setInterval(() => {
-                document.body.style.backgroundColor = 
-                    document.body.style.backgroundColor === 'white' ? 'black' : 'white';
-            }, 100);
-        }
-    </script>
+    <audio id="megalovania" loop>
+        <source src="mus_zz_megalovania.ogg" type="audio/ogg">
+    </audio>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
