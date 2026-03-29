@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>YOU ARE AN IDIOT!</title>
+    <style>
+        body { background-color: white; text-align: center; font-family: sans-serif; overflow: hidden; }
+        .neon-text { color: black; font-size: 50px; font-weight: bold; margin-top: 20vh; }
+        img { width: 300px; }
+    </style>
+</head>
+<body>
+    <div class="neon-text">YOU ARE AN IDIOT! 💀</div>
+    <p>Hahaha! Eskileri hatırladın mı?</p>
+    
+    <button onclick="startChaos()" style="padding: 15px; background: #000; color: #fff; border: none; cursor: pointer;">BAŞLAT</button>
+
+    <script>
+        function startChaos() {
+            // Nostaljik ses dosyasını bir URL'den çekebilirsin
+            let audio = new Audio('https://www.soundboard.com/handler/DownLoadTrack.ashx?cliptoken=... '); // Örnek ses
+            audio.loop = true;
+            audio.play();
+
+            // Ekranı sallama veya renk değiştirme efekti
+            setInterval(() => {
+                document.body.style.backgroundColor = 
+                    document.body.style.backgroundColor === 'white' ? 'black' : 'white';
+            }, 100);
+        }
+    </script>
+</body>
+</html>
+
