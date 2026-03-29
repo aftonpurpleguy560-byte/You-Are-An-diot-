@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>YOU ARE AN IDIOT.EXE</title>
+    <title>İdiot.EXE - Sans Edition</title>
+    
     <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="apple-touch-icon" href="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJpZzRreXZid2R4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9iZ2VudGlmaWVyJmN0PWc/UCWmgOshU7f7Z/giphy.gif">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div id="content">
+        <div class="smiley-container">
+            <span class="smiley">☺</span>
+            <span class="smiley">☺</span>
+            <span class="smiley">☺</span>
+        </div>
+
         <h1 class="glitch">YOU ARE AN IDIOT!</h1>
         
         <div class="controls">
@@ -29,28 +39,27 @@
         // Service Worker Kaydı
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js');
+                navigator.serviceWorker.register('sw.js')
+                    .then(() => console.log('İdiot.EXE PWA Hazır!'))
+                    .catch(err => console.error('PWA Hatası:', err));
             });
         }
 
-        // Tam Ekran ve Kaos Başlatıcı
+        // Başlatma ve Tam Ekran Fonksiyonu
         function badTime() {
-            // Tam ekran yap
+            // Tableti tam ekran moduna sok
             if (document.documentElement.requestFullscreen) {
-                document.documentElement.requestFullscreen();
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.log("Tam ekran hatası: ", err.message);
+                });
             }
             
-            // script.js içindeki asıl fonksiyonu tetikle
-            if (typeof window.startChaos === 'function') {
-                window.startChaos();
-            } else {
-                // Eğer script.js'de fonksiyon ismi farklıysa burayı düzenleyebiliriz
-                const audio = document.getElementById('megalovania');
-                audio.play();
-                document.getElementById('start-btn').style.display = 'none';
+            // script.js içindeki asıl kaos fonksiyonunu tetikle
+            if (typeof window.badTime === 'function') {
+                // Eğer script.js'deki isimle çakışıyorsa direkt oradaki mantığı çalıştırır
+                // Zaten script.js yüklendiğinde badTime fonksiyonu global olacaktır.
             }
         }
     </script>
 </body>
 </html>
-
