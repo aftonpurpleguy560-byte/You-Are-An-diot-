@@ -1,0 +1,17 @@
+{
+  "name": "YOU ARE AN IDIOT - Sans Edition",
+  "short_name": "IdiotVirus",
+  "description": "Nostaljik ve zararsız bir şaka uygulaması.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJpZzRreXZid2R4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZ2VudGlmaWVyJmN0PWc/UCWmgOshU7f7Z/giphy.gif",
+      "sizes": "512x512",
+      "type": "image/gif"
+    }
+  ]
+}
+
