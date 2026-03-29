@@ -4,11 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>İdiot.EXE - Sans Edition</title>
-    
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#2563eb">
-    <link rel="apple-touch-icon" href="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJpZzRreXZid2R4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZ2VudGlmaWVyJmN0PWc/UCWmgOshU7f7Z/giphy.gif">
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -34,15 +30,5 @@
     </audio>
 
     <script src="script.js"></script>
-
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js')
-                    .then(() => console.log('İdiot.EXE PWA Aktif!'))
-                    .catch(err => console.error('PWA Hatası:', err));
-            });
-        }
-    </script>
 </body>
 </html>
