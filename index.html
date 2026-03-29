@@ -7,7 +7,7 @@
     
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#2563eb">
-    <link rel="apple-touch-icon" href="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJpZzRreXZid2R4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9iZ2VudGlmaWVyJmN0PWc/UCWmgOshU7f7Z/giphy.gif">
+    <link rel="apple-touch-icon" href="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJpZzRreXZid2R4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZ2VudGlmaWVyJmN0PWc/UCWmgOshU7f7Z/giphy.gif">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,12 +15,12 @@
 
     <div id="content">
         <div class="smiley-container">
-            <span class="smiley">☺</span>
-            <span class="smiley">☺</span>
-            <span class="smiley">☺</span>
+            <span class="smiley"></span>
+            <span class="smiley"></span>
+            <span class="smiley"></span>
         </div>
 
-        <h1 class="glitch">YOU ARE AN IDIOT!</h1>
+        <h1 class="glitch">you are an idiot</h1>
         
         <div class="controls">
             <button onclick="badTime()" id="start-btn">
@@ -29,36 +29,19 @@
         </div>
     </div>
 
-    <audio id="megalovania" loop>
+    <audio id="megalovania" loop preload="auto">
         <source src="mus_zz_megalovania.ogg" type="audio/ogg">
     </audio>
 
     <script src="script.js"></script>
 
     <script>
-        // Service Worker Kaydı
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('sw.js')
-                    .then(() => console.log('İdiot.EXE PWA Hazır!'))
+                    .then(() => console.log('İdiot.EXE PWA Aktif!'))
                     .catch(err => console.error('PWA Hatası:', err));
             });
-        }
-
-        // Başlatma ve Tam Ekran Fonksiyonu
-        function badTime() {
-            // Tableti tam ekran moduna sok
-            if (document.documentElement.requestFullscreen) {
-                document.documentElement.requestFullscreen().catch(err => {
-                    console.log("Tam ekran hatası: ", err.message);
-                });
-            }
-            
-            // script.js içindeki asıl kaos fonksiyonunu tetikle
-            if (typeof window.badTime === 'function') {
-                // Eğer script.js'deki isimle çakışıyorsa direkt oradaki mantığı çalıştırır
-                // Zaten script.js yüklendiğinde badTime fonksiyonu global olacaktır.
-            }
         }
     </script>
 </body>
