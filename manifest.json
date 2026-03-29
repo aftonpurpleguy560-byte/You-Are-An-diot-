@@ -1,7 +1,7 @@
 {
-  "name": "YOU ARE AN IDIOT - Sans Edition",
-  "short_name": "IdiotVirus",
-  "description": "Nostaljik ve zararsız bir şaka uygulaması.",
+  "name": "İdiot.EXE",
+  "short_name": "İdiot.EXE",
+  "description": "Nostaljik Megalovania Şakası - Purpleguy Edition",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#000000",
@@ -12,6 +12,6 @@
       "sizes": "512x512",
       "type": "image/gif"
     }
-  ]
+  ],
+  "orientation": "portrait"
 }
-
