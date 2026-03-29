@@ -1,0 +1,53 @@
+body {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.glitch {
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 3px 0 red, -3px 0 blue;
+    margin-bottom: 20px;
+}
+
+#sans-img {
+    width: 250px;
+    filter: grayscale(100%);
+    margin-bottom: 30px;
+}
+
+#start-btn {
+    background: #2563eb;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#start-btn:active {
+    transform: scale(0.9);
+}
+
+/* Sallanma Efekti */
+.shake-screen {
+    animation: shake 0.15s infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(2px, 2px); }
+    25% { transform: translate(-2px, -2px); }
+    50% { transform: translate(-2px, 2px); }
+    75% { transform: translate(2px, -2px); }
+    100% { transform: translate(0, 0); }
+}
