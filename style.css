@@ -9,78 +9,59 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    padding: 0;
     overflow: hidden;
     font-family: 'Courier New', Courier, monospace;
-    transition: background-color 0.05s;
 }
 
-/* 3 Gülen Yüz Konteyneri */
 .smiley-container {
     display: flex;
     gap: 40px;
-    margin-bottom: 20px;
     z-index: 10;
 }
 
-/* Poster Stilinde Klasik Gülen Yüzler */
+/* Klasik Poster Gülen Yüzü (SVG) */
 .smiley {
-    width: 150px; /* Tablet için devasa boyut */
+    width: 150px;
     height: 150px;
-    display: inline-block;
-    /* Klasik gülen yüz SVG çizimi */
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='white' stroke='black' stroke-width='3'/%3E%3Ccircle cx='35' cy='40' r='6' fill='black'/%3E%3Ccircle cx='65' cy='40' r='6' fill='black'/%3E%3Cpath d='M 30 65 Q 50 85 70 65' stroke='black' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
 }
 
-/* Devasa Glitch Yazı */
+/* Zıplama Animasyonu */
+.bouncing {
+    position: absolute;
+    animation: bounce 0.5s infinite alternate ease-in-out;
+}
+
+@keyframes bounce {
+    from { transform: translate(0, 0); }
+    to { transform: translate(20px, 50px); }
+}
+
 .glitch {
-    font-size: 10rem;
+    font-size: 8rem;
     font-weight: 900;
-    text-transform: lowercase; /* Posterle uyumlu olması için küçük harf */
-    text-align: center;
-    margin: 0;
-    z-index: 10;
+    text-transform: lowercase;
     text-shadow: 6px 0 #ff0000, -6px 0 #0000ff;
-    letter-spacing: -2px;
 }
 
-/* Başlat Butonu */
-#start-btn {
-    margin-top: 40px;
-    background: #2563eb;
-    color: white;
-    padding: 20px 45px;
-    border: 4px solid white;
-    border-radius: 60px;
-    font-size: 2rem;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 20;
-    box-shadow: 0 0 25px rgba(37, 99, 235, 0.6);
-}
-
-#start-btn:active {
-    transform: scale(0.9);
-}
-
-/* Ekran Sallanma (Shake) Efekti */
 .shake-screen {
     animation: shake 0.1s infinite;
 }
 
 @keyframes shake {
     0% { transform: translate(5px, 5px); }
-    25% { transform: translate(-5px, -10px); }
-    50% { transform: translate(-10px, 5px); }
-    75% { transform: translate(5px, 10px); }
+    50% { transform: translate(-5px, -10px); }
     100% { transform: translate(0, 0); }
 }
 
-/* Mobil/Tablet Uyumluluğu */
-@media (max-width: 768px) {
-    .glitch { font-size: 5rem; }
-    .smiley { width: 90px; height: 90px; }
+#start-btn {
+    background: #2563eb;
+    color: white;
+    padding: 20px 45px;
+    border: 4px solid white;
+    border-radius: 60px;
+    font-size: 1.8rem;
+    cursor: pointer;
 }
