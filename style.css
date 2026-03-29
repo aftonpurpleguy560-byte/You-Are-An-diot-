@@ -12,7 +12,7 @@ body {
     padding: 0;
     overflow: hidden;
     font-family: 'Courier New', Courier, monospace;
-    transition: background-color 0.05s; /* Renk geçişlerini daha keskin yapar */
+    transition: background-color 0.05s;
 }
 
 /* 3 Gülen Yüz Konteyneri */
@@ -23,46 +23,47 @@ body {
     z-index: 10;
 }
 
-/* Gülen Yüzlerin Stili */
+/* Poster Stilinde Klasik Gülen Yüzler */
 .smiley {
-    font-size: 120px; /* Tablet ekranı için devasa boyut */
-    color: white;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-    user-select: none;
+    width: 150px; /* Tablet için devasa boyut */
+    height: 150px;
+    display: inline-block;
+    /* Klasik gülen yüz SVG çizimi */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='white' stroke='black' stroke-width='3'/%3E%3Ccircle cx='35' cy='40' r='6' fill='black'/%3E%3Ccircle cx='65' cy='40' r='6' fill='black'/%3E%3Cpath d='M 30 65 Q 50 85 70 65' stroke='black' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* Devasa Glitch Yazı */
 .glitch {
-    font-size: 10rem; /* Ekranı kaplayan devasa yazı */
+    font-size: 10rem;
     font-weight: 900;
-    text-transform: uppercase;
+    text-transform: lowercase; /* Posterle uyumlu olması için küçük harf */
     text-align: center;
     margin: 0;
     z-index: 10;
-    /* Klasik Idiot Virüsü Glitch Efekti */
-    text-shadow: 5px 0 #ff0000, -5px 0 #0000ff;
-    letter-spacing: 5px;
+    text-shadow: 6px 0 #ff0000, -6px 0 #0000ff;
+    letter-spacing: -2px;
 }
 
 /* Başlat Butonu */
 #start-btn {
-    margin-top: 50px;
+    margin-top: 40px;
     background: #2563eb;
     color: white;
-    padding: 25px 50px;
+    padding: 20px 45px;
     border: 4px solid white;
     border-radius: 60px;
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.2s;
     z-index: 20;
-    box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+    box-shadow: 0 0 25px rgba(37, 99, 235, 0.6);
 }
 
 #start-btn:active {
     transform: scale(0.9);
-    background: #1d4ed8;
 }
 
 /* Ekran Sallanma (Shake) Efekti */
@@ -71,20 +72,15 @@ body {
 }
 
 @keyframes shake {
-    0% { transform: translate(8px, 8px) rotate(0deg); }
-    25% { transform: translate(-8px, -12px) rotate(-1deg); }
-    50% { transform: translate(-15px, 0px) rotate(1deg); }
-    75% { transform: translate(8px, 12px) rotate(0deg); }
-    100% { transform: translate(5px, -5px) rotate(-1deg); }
+    0% { transform: translate(5px, 5px); }
+    25% { transform: translate(-5px, -10px); }
+    50% { transform: translate(-10px, 5px); }
+    75% { transform: translate(5px, 10px); }
+    100% { transform: translate(0, 0); }
 }
 
 /* Mobil/Tablet Uyumluluğu */
 @media (max-width: 768px) {
-    .glitch {
-        font-size: 5rem;
-    }
-    .smiley {
-        font-size: 80px;
-    }
+    .glitch { font-size: 5rem; }
+    .smiley { width: 90px; height: 90px; }
 }
-
